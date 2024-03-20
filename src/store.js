@@ -18,6 +18,7 @@ export const useListTodo = defineStore({
         },
         deleteTodo(id) {
             this.listTodo = this.listTodo.filter(item => item.id !== id);
+            localStorage.setItem('todos', JSON.stringify(this.listTodo));
         },
         toggleTodo(id) {
             for (let i in this.listTodo) {

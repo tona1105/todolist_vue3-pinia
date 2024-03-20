@@ -24,7 +24,7 @@ import AddTodo from '../components/AddTodo.vue'
 import TodoItem from '../components/TodoItem.vue'
 import { ref, onMounted, watch } from 'vue'
 const store = useListTodo()
-const listToDo = ref([])
+const {listTodo} = store
 const listToShow = ref([])
 const idToDo = ref(0)
 const selectStatusGeted = ref({ name: 'All' })
@@ -61,7 +61,7 @@ const handleFilterList = (category) => {
     listToShow.value = store.getItemByFilter(selectStatusGeted.value.name)
 }
 
-watch(() => store.listTodo, (x) => {
+watch(() => listTodo, (x) => {
     handleFilterList(selectStatusGeted.value.name)
     localStorage.setItem('todos', JSON.stringify(x));
 })
