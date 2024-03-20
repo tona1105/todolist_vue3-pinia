@@ -93,7 +93,6 @@ button:focus-visible {
   border: none;
   border-radius: unset;
   width: 90%;
-  max-width: 90%;
 }
 
 .todo__add--button {
@@ -130,7 +129,10 @@ button:focus-visible {
   min-width: 50%;
   max-width: 60%;
 }
-
+.item__content {
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
 .todo {
   display: flex;
   justify-content: center;
